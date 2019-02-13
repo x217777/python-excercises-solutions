@@ -67,29 +67,25 @@ class DailyCoding:
            # Then  -> return True
            # Else  -> return False
            # Task  ->
-                1. needs to loop through numbers to get index and numbers  solution -> for loop with enumerate function
-                2. at current index get the list of rest numbers           solution -> get nested for loop
-                3. rest number list should have (start, end)          solution -> range(current_index + 1, len(lst) + 1)
-                4. need to avoid list outofbound error                Solution -> 2nd last ele don't enter into 2nd loop
-                5. check two numbers add up to k                      solution -> current index ele + next index ele
-                6. return True if adds up                             solution -> return True
-                7. else return False                                  solution -> return False
+                1. needs to loop through numbers to get index and numbers  solution -> for loop with enumerate func
+                2. at current index get the list of rest numbers      solution -> nested for loop with enumerate func
+                3. check two numbers add up to k                      solution -> current index ele + next index ele
+                4. return True if adds up                             solution -> return True
+                5. else return False                                  solution -> return False
 
         :return: boolean True or False
         """
         for index, first_element in enumerate(lst):
-            if index != (len(lst) - 1):
-                for i, second_element in enumerate(lst[index+1:]):
-                    if first_element + second_element == k:
-                        return True
-                        break
+            for i, second_element in enumerate(lst[index+1:]):
+                if first_element + second_element == k:
+                    print(f"\nNumber is {first_element} "
+                          f"and Number is { second_element} add up to {k}")
+                    return True
+                    break
 
-            elif first_element + lst[-1] == k:
-                return True
-                break
+        return False
 
-            else:
-                return False
+
 
 
 

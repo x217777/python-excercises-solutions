@@ -15,7 +15,7 @@ from proboscis import TestProgram
 from dailycodingproblem.list_excercises import DailyCoding
 
 
-#@test
+@test
 def test_product_of_array_except_current_index():
     input_ = [[3, 2, 1], [1, 1, 1]]
     expected = [[2, 3, 6], [1, 1, 1]]
@@ -26,8 +26,8 @@ def test_product_of_array_except_current_index():
 
 @test
 def test_is_any_two_numbers_add_up_to_k():
-    lst = [10, 15, 3, 5]
-    k = 17
+    lst = [10, 15, 2, 5]
+    k = 7
     is_add_up = DailyCoding.is_any_two_numbers_add_up_to_k(lst, k)
     assert_equal(is_add_up, True)
 
